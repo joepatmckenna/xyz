@@ -44,11 +44,11 @@ Computing the last equation requires being able to approximate the flow $F$ and 
 
 Here's a sample of the data for a month-long window (8/14-9/15/05) during which hurricane Katrina hit New Orleans. The hurricane appears as a rogue gust in the Gulf of New Mexico about halfway through the video.
 
-<video src={KatrinaVf} width="100%"></video>
+<video src={KatrinaVf} width="100%" controls></video>
 
 I used forward Euler to do the numerical integration and cubic b-splines (via [FITPACK][fitpack]) to do interpolation on a sphere with the Earth's radius. Here are the resulting ridges in the finite time Lyapunov exponent field parameterized by $t$ equal to 2 weeks for a sliding window over the same month-long period.
 
-<video src={KatrinaLcs} width="100%"></video>
+<video src={KatrinaLcs} width="100%" controls></video>
 
 Computing $\sigma(x;t)$ involves advecting a grid of trajectories by the flow. This is highly parallelizable. To capitalize on this, I wrote the numerical integration and differentiation routines in Fortran that I wrapped with Python (via [f2py][f2py]) and launched multiple processes (via Python's [multiprocessing][multiprocessing] module) to carry out parallel computations.
 

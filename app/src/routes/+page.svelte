@@ -12,3 +12,12 @@
 		</li>
 	{/each}
 </ul>
+
+<style>
+	ul {
+		list-style-type: none;
+	}
+	li {
+		padding: 12px;
+	}
+</style>

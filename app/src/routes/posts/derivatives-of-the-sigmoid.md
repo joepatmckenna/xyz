@@ -69,8 +69,8 @@ The work of repeatedly differentiating $f$ is done by repeatedly multiplying its
 
 $$
 \begin{aligned}
-D*n^n\sum*{j=0}^n(-1)^jv*{n,j} &= \sum*{j=0}^n(-1)^jD*n^nv*{n,j} \\
-&= \sum*{j=0}^n(-1)^j(j+1)^nv*{n,j}.
+D_n^n\sum_{j=0}^n(-1)^jv_{n,j} &= \sum_{j=0}^n(-1)^jD_n^nv_{n,j} \\
+&= \sum_{j=0}^n(-1)^j(j+1)^nv_{n,j}.
 \end{aligned}
 $$
 
@@ -94,10 +94,10 @@ We have
 
 $$
 \begin{aligned}
-D*kv*{k,j} &=
-\begin{pmatrix} D*{k-1} & 0 \\ \begin{pmatrix} 0 & \cdots & 0 & -k \end{pmatrix} & k+1 \end{pmatrix}
-\begin{pmatrix} v*{k-1,j} \\ {k\choose j} \end{pmatrix} \\
-&= \begin{pmatrix} D*{k-1}v*{k-1,j} \\ -k{k-1\choose j}+(k+1){k\choose j} \end{pmatrix}.
+D_kv_{k,j} &=
+\begin{pmatrix} D_{k-1} & 0 \\ \begin{pmatrix} 0 & \cdots & 0 & -k \end{pmatrix} & k+1 \end{pmatrix}
+\begin{pmatrix} v_{k-1,j} \\ {k\choose j} \end{pmatrix} \\
+&= \begin{pmatrix} D_{k-1}v_{k-1,j} \\ -k{k-1\choose j}+(k+1){k\choose j} \end{pmatrix}.
 \end{aligned}
 $$
 
@@ -117,12 +117,11 @@ so that the bottom is $(j+1){k\choose j}$. Thus, $D_kv_{k,j}=(j+1)v_{k,j}$.
 
 Here's a plot of the derivatives of the sigmoid function using the above formula:
 
-<img src={SigmoidDerivs} alt="Derivatives of the sigmoid function"/>
+<img src={SigmoidDerivs} alt="Derivatives of the sigmoid function" width="100%"/>
 
 And, here's the Python script that produced the plot:
 
 ```python
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -147,12 +146,12 @@ def df(n, x):
     return res
 
 
-x = np.linspace(-5, 5, 1000)[:, np.newaxis].repeat(16, axis=1).T
-y = np.array([df(n, x[n]) for n in range(16)])
+x = np.linspace(-5, 5, 1000)
+y = np.array([df(n, x) for n in range(16)])
 
 fig, ax = plt.subplots(4, 4, figsize=(8, 6))
-for xi, yi, i in zip(x, y, range(16)):
-    ax[i / 4, i % 4].plot(xi, yi, 'k-', label="n = %i" % (i))
+for i, yi, in enumerate(y):
+    ax[i / 4, i % 4].plot(x, yi, 'k-', label="n = %i" % (i))
     ax[i / 4, i % 4].legend()
 ```
 
