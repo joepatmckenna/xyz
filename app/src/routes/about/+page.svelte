@@ -1,11 +1,10 @@
 <p class="title">About</p>
 
-Hi, I'm Joe. I write about AI and math.
-
-<p class="title">Résumé</p>
+Hi, I'm Joe. This site contains my personal ramblings about math, AI, and programming. Here's a bit
+about my background:
 
 <div class="section">
-	<p class="title">Experience</p>
+	<p class="title">Work Experience</p>
 
 	<div class="item">
 		<div class="title">Software Engineer</div>
@@ -52,7 +51,7 @@ Hi, I'm Joe. I write about AI and math.
 	}
 
 	.section .title {
-		font-size: 20px;
+		font-size: 18px;
 	}
 
 	.section .item .title {

@@ -8,7 +8,7 @@
 <style>
 	header {
 		padding: 1rem;
-		background: lightskyblue;
+		border-bottom: 2mm ridge rgba(39, 101, 215, 0.6);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
