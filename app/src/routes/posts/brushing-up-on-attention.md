@@ -68,19 +68,19 @@ def scaled_dot_product_attention(
   """Scaled Dot-Product Attention.
 
   Args:
-    Q: queries                          n_q x d_k
-    K: keys                             n_k x d_k
-    V: values                           n_k x d_v
-    mask: boolean, True means ignore    n_q x n_k
+    Q: queries               n_q x d_k
+    K: keys                  n_k x d_k
+    V: values                n_k x d_v
+    mask: True means ignore  n_q x n_k
 
   Returns:
     convex combinations of values weighted by scaled
     query-key dot-products
   """
-  W = np.matmul(Q, K.T)                 # MatMul
-  W /= np.sqrt(K.shape[1])              # Scale
-  if mask is not None:                  # Mask (opt.)
-      W[np.where(mask)] = -np.inf       # ...
-  W = scipy.special.softmax(W, axis=1)  # SoftMax
-  return np.matmul(W, V)                # MatMul
+  W = np.matmul(Q, K.T)            # MatMul
+  W /= np.sqrt(K.shape[1])         # Scale
+  if mask is not None:             # Mask (opt.)
+      W[np.where(mask)] = -np.inf  # ...
+  W = scipy.special.softmax(W, 1)  # SoftMax
+  return np.matmul(W, V)           # MatMul
 ```
