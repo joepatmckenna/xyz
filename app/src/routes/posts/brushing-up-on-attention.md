@@ -81,6 +81,6 @@ def scaled_dot_product_attention(
   W /= np.sqrt(K.shape[1])         # Scale
   if mask is not None:             # Mask (opt.)
       W[np.where(mask)] = -np.inf  # ...
-  W = scipy.special.softmax(W, 1)  # SoftMax
-  return np.matmul(W, V)           # MatMul
+  P = scipy.special.softmax(W, 1)  # SoftMax
+  return np.matmul(P, V)           # MatMul
 ```
