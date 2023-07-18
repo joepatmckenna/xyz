@@ -60,27 +60,28 @@ Below is a simple Python implementation, using unbatched (2D) NumPy arrays, that
 import scipy
 import numpy as np
 
-Mat = np.ndarray
-
 def scaled_dot_product_attention(
-  Q: Mat, K: Mat, V: Mat, mask: Mat | None = None
-) -> Mat:
+  Q: np.ndarray,
+  K: np.ndarray,
+  V: np.ndarray,
+  mask: np.ndarray | None = None,
+) -> np.ndarray:
   """Scaled Dot-Product Attention.
 
   Args:
-    Q: queries               n_q x d_k
-    K: keys                  n_k x d_k
-    V: values                n_k x d_v
-    mask: True means ignore  n_q x n_k
+    Q: queries               (n_q, d_k)
+    K: keys                  (n_k, d_k)
+    V: values                (n_k, d_v)
+    mask: true means ignore  (n_q, n_k)
 
   Returns:
-    convex combinations of values weighted by scaled
-    query-key dot-products
+    convex combinations of values weighted
+      by scaled query-key dot-products
   """
   W = np.matmul(Q, K.T)            # MatMul
   W /= np.sqrt(K.shape[1])         # Scale
-  if mask is not None:             # Mask (opt.)
-    W[np.where(mask)] = -np.inf    # ...
+  if mask is not None:             # (opt.)
+    W[np.where(mask)] = -np.inf    # Mask
   P = scipy.special.softmax(W, 1)  # SoftMax
   return np.matmul(P, V)           # MatMul
 ```
