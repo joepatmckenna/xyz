@@ -27,7 +27,7 @@ about my background:
 	<div class="item">
 		<div class="title">Postdoctoral Fellow</div>
 		<div class="text">National Institutes of Health</div>
-		<div class="text">2018 - 2020</div>
+		<div class="text">2017 - 2018</div>
 	</div>
 </div>
 
