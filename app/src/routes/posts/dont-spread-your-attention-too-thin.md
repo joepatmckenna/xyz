@@ -58,7 +58,7 @@ How different are the ouputs when the attention weights are thresholded? And, ho
 
 <img src={MaeVsWeightDensity} alt="Error from clipping attention weights" width="100%"/>
 
-This suggests that a decent amout of computation cost can be realized by sparsifying the attention weights without having a huge impact on performance. But one would need to do a more comprehensive analysis with a full Transformer on real data to have confidence in that suggestion.
+This suggests that a decent amount of computation can be avoided by sparsifying the attention weights without having much impact on the overall performance of a Transformer. But a more comprehensive analysis with a full Transformer model on real data would inspire more confidence in that suggestion.
 
 ### Scaled Dot-Product Attention Implementations
 
