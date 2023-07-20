@@ -83,4 +83,4 @@ matrix<T> conjugate_gradient(
 
 Here is a plot from $n=1$ and the execution time for $1\leq n<100$, with $m=10n$, $x^{(i)}_j\sim\mathcal{U}[-1,1]$, $y_i=f(x^{(i)})+\varepsilon$, and $\varepsilon\sim\mathcal{U}[-0.1,0.1]$.
 
- <img src="https://raw.githubusercontent.com/joepatmckenna/matrix.hpp/master/demos/conjugate_gradient/fig.png">
+ <img src="https://raw.githubusercontent.com/joepatmckenna/matrix.hpp/master/demos/conjugate_gradient/fig.png" width="100%">
