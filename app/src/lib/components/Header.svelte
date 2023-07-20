@@ -1,14 +1,19 @@
+<script>
+	import SlideToggle from '$lib/components/SlideToggle.svelte';
+</script>
+
 <header>
-	<a href="/">Personal Website of Joe McKenna</a>
 	<nav>
+		<a href="/">Home</a>
 		<a href="/about">About</a>
 	</nav>
+	<SlideToggle />
 </header>
 
 <style>
 	header {
 		padding: 1rem;
-		border-bottom: 2mm ridge rgba(39, 101, 215, 0.6);
+		border-bottom: 4mm ridge rgba(22, 63, 139, 0.6);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;

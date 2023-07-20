@@ -10,7 +10,6 @@ Find the hyperplane $f(x)=c_0+c_1x_1+\cdots+c_nx_n$ that best fits the $m$ vecto
 Let's first frame the problem in linear algebra. Write the vectors $x^{(i)}$ as the rows of a matrix $X$ with a prepended column of $1$s and arrange the coefficients $c_i$ in a vector $c$:
 
 $$
-\begin{align}
 X = \begin{pmatrix}
 1 & x^{(1)}_1 & \cdots & x^{(1)}_n \\
 1 & x^{(2)}_1 & \cdots & x^{(2)}_n \\
@@ -20,7 +19,6 @@ X = \begin{pmatrix}
 c = \begin{pmatrix}
 c_0 \\ c_1 \\ \vdots \\ c_n
 \end{pmatrix}.
-\end{align}
 $$
 
 Check for yourself that $$E=\|y-Xc\|_2^2$$. To find the minimizer $c$, we will use [conjugate gradient](https://en.wikipedia.org/wiki/Conjugate_gradient_method), an iterative method for solving $Ac=b$ for $c$ when $A$ is symmetric and positive definite. The method works by descending the quadratic energy function $\frac12x^TAx-x^Tb$ to its unique minimum in a sequence of directions $p_k$ conjugate with respect to $A$, i.e. $p_k^TAp_{k+1}=0$. The method is summarized by the following algorithm:
@@ -56,25 +54,30 @@ Then, let $A=X^TX$ and $b=X^Ty$. We will use the conjugate gradient method to so
 
 ```cpp
 template <typename T>
-matrix<T> conjugate_gradient(matrix<T> A, matrix<T> b, matrix<T> c0, T tol) {
-int k=0, n=A.shape[0]-1;
-matrix<T> c(n+1,1), p(n+1,1), r(n+1,1), Ap(n+1,1);
-T alpha, beta, rtr;
+matrix<T> conjugate_gradient(
+    matrix<T> A,
+    matrix<T> b,
+    matrix<T> c0,
+    T tol
+) {
+  int k = 0, n = A.shape[0] - 1;
+  matrix<T> c(n+1, 1), p(n+1, 1), r(n+1, 1), Ap(n+1, 1);
+  T alpha, beta, rtr;
 
-p = r = b - A*c0;
-rtr = dot(r,r);
-while (norm(r) > tol) {
-Ap = A*p;
-alpha = rtr / dot(p, Ap);
-c = c + alpha*p;
-beta = rtr;
-r = r - alpha*Ap;
-rtr = dot(r,r);
-beta = rtr / beta;
-p = r + beta\*p;
-k += 1;
-}
-return c;
+  p = r = b - A * c0;
+  rtr = dot(r, r);
+  while (norm(r) > tol) {
+    Ap = A * p;
+    alpha = rtr / dot(p, Ap);
+    c = c + alpha * p;
+    beta = rtr;
+    r = r - alpha * Ap;
+    rtr = dot(r, r);
+    beta = rtr / beta;
+    p = r + beta * p;
+    k += 1;
+  }
+  return c;
 }
 ```
 

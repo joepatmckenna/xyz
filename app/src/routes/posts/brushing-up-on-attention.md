@@ -4,7 +4,7 @@ date: '2023-07-15'
 ---
 
 <script>
-   import ScaledDotProductAttention from "$lib/assets/scaled_dot_product_attention.png"
+   import ScaledDotProductAttention from "$lib/assets/media/scaled_dot_product_attention.png"
 </script>
 
 ## Attention

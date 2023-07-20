@@ -1,6 +1,9 @@
 <script>
+	import '$lib/styles/app.scss';
+	import '$lib/assets/css/prism.css';
+	import '$lib/assets/js/prism.js';
+
 	import Header from '$lib/components/Header.svelte';
-	import '$lib/styles/style.scss';
 </script>
 
 <svelte:head>

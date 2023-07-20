@@ -4,7 +4,7 @@ date: '2018-01-20'
 ---
 
 <script>
-   import SigmoidDerivs from "$lib/assets/sigmoid-derivs.png"
+   import SigmoidDerivs from "$lib/assets/media/sigmoid-derivs.png"
 </script>
 
 The sigmoid function $f(x)={1 \over 1+e^{-x}}$ is useful in a variety of applications particularly because it can be used to map an unbounded real value into $[0,1]$. As the solution to $y'=y(1-y)$, $y(0)=1/2$, it is used as the prototypical model of population growth with a carrying capacity. It can be used as a so-called activation function that compactifies inputs to nodes in a neural network. I used the function extensively in my own research to model the probability that an ion channel on an electrically excitable cell's membrane opens in responses to a voltage change.

@@ -4,7 +4,7 @@ date: '2023-07-18'
 ---
 
 <script>
-   import MaeVsWeightDensity from "$lib/assets/MAE_vs_attention_weights_density.png"
+   import MaeVsWeightDensity from "$lib/assets/media/MAE_vs_attention_weights_density.png"
 </script>
 
 ## Computational cost of Scaled Dot-Product Attention

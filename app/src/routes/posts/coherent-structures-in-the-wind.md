@@ -4,8 +4,8 @@ date: '2017-06-22'
 ---
 
 <script>
-    import KatrinaVf from "$lib/assets/katrina_vf.mp4"
-    import KatrinaLcs from "$lib/assets/katrina_lcs.mp4"
+    import KatrinaVf from "$lib/assets/media/katrina_vf.mp4"
+    import KatrinaLcs from "$lib/assets/media/katrina_lcs.mp4"
 </script>
 
 Something I like to do at large research conferences is drop into sessions with intriguing titles about topics unfamiliar to me. At the last SIAM Conference on applications of dynamical systems, I dropped into "Set Oriented and Transfer Operator Methods for Turbulent Flows". I learned about an appealing visualization called _finite time Lyapunov exponent fields_ that I'll present here.

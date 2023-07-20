@@ -2,22 +2,13 @@
 	export let data;
 </script>
 
-<ul>
+<div>
 	{#each data.posts as post}
-		<li>
+		<div>
 			{post.meta.date}
 			<a href={post.path}>
 				{post.meta.title}
 			</a>
-		</li>
+		</div>
 	{/each}
-</ul>
-
-<style>
-	ul {
-		list-style-type: none;
-	}
-	li {
-		padding: 12px;
-	}
-</style>
+</div>

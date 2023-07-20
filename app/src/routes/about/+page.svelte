@@ -1,7 +1,5 @@
-<p class="title">About</p>
-
-Hi, I'm Joe. This site contains my personal ramblings about math, AI, and programming. Here's a bit
-about my background:
+Hi, I'm Joe McKenna. This site contains my ramblings about math, AI, programming, etc. Here's my
+background:
 
 <div class="section">
 	<p class="title">Work Experience</p>
