@@ -48,7 +48,7 @@ To see how this method is applicable to the linear regression problem, notice:
 
 - The image of $X$ at the minimizer $c$ is perpendicular to the residual $y-Xc$, so $X^T(y-Xc)=0$, and therefore the solution $c$ to $X^TXc=X^Ty$ minimizes $E$.
 - $X^TX$ is symmetric since it equals its transpose.
-- If $X$ has full rank i.e. if at least $n+1$ of the $x^{(i)}$ are independent, then $Xc\neq0$ for all $c\neq0$ and $$c^TX^TXc=\|Xc\|_2^2>0$$ for all $c\neq0$. That is, $X^TX$ is positive definite.
+- If $X$ has full rank i.e. if at least $n+1$ of the $x^{(i)}$ are independent, then $Xc$ is nonzero for all nonzero $c$ and $$c^TX^TXc=\|Xc\|_2^2>0$$ for all nonzero $c$. That is, $X^TX$ is positive definite.
 
 Then, let $A=X^TX$ and $b=X^Ty$. We will use the conjugate gradient method to solve $Ac=b$ for $c$. A conjugate gradient function using the `matrix` class in the [matrix.hpp](https://www.github.com./joepatmckenna/matrix.hpp) repo amounts to:
 
