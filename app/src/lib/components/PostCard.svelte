@@ -46,7 +46,4 @@
 	.subtitle {
 		font-size: 0.9em;
 	}
-
-	.body {
-	}
 </style>

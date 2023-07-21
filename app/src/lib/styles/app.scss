@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 :root {
   --dark-background: #000;
   --dark-primary-color: #fff;
-  --dark-secondary-color: hotpink;
+  --dark-secondary-color: lightblue;
   --light-background: #fff;
   --light-primary-color: #000;
-  --light-secondary-color: skyblue;
+  --light-secondary-color: lightblue;
 }
 
 html, body {
-  font-family: 'Instrument Sans', sans-serif;
+  font-family: 'Open Sans';
   margin: 0;
   padding: 0;
   width: 100%;
