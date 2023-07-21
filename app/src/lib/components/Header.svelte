@@ -1,8 +1,13 @@
+<script>
+	import DarkModeButton from '$lib/components/DarkModeButton.svelte';
+</script>
+
 <header>
 	<nav>
 		<a href="/">Home</a>
 		<a href="/about">About</a>
 	</nav>
+	<DarkModeButton />
 </header>
 
 <style>

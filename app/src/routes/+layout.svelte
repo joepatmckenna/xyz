@@ -2,12 +2,8 @@
 	import '$lib/styles/app.scss';
 	import '$lib/assets/css/prism.css';
 	import '$lib/assets/js/prism.js';
-
 	import Header from '$lib/components/Header.svelte';
-
-	import { StarRegular } from 'svelte-awesome-icons';
-	let theme = 'light';
-	const toggleTheme = () => (theme == 'light' ? (theme = 'dark') : (theme = 'light'));
+	import { darkMode } from '$lib/utils';
 </script>
 
 <svelte:head>
@@ -19,12 +15,9 @@
 	/>
 </svelte:head>
 
-<div class={theme}>
+<div class={$darkMode ? 'dark' : 'light'}>
 	<div class="app">
 		<Header />
-		<span on:click={toggleTheme}>
-			<StarRegular />
-		</span>
 		<main>
 			<slot />
 		</main>
@@ -38,7 +31,7 @@
 		--secondary-color: var(--dark-secondary-color);
 		padding: 0;
 		margin: 0;
-		width: 100%;
+		min-width: 100%;
 		height: 100%;
 	}
 
@@ -48,7 +41,7 @@
 		--secondary-color: var(--light-secondary-color);
 		padding: 0;
 		margin: 0;
-		width: 100%;
+		min-width: 100%;
 		height: 100%;
 	}
 
@@ -57,7 +50,7 @@
 		color: var(--primary-color);
 		padding: 0;
 		margin: 0;
-		width: 100%;
+		min-width: 100%;
 		min-height: 100%;
 	}
 
@@ -65,9 +58,5 @@
 		padding: 16px;
 		margin: auto;
 		max-width: 720px;
-	}
-
-	.katex {
-		font: 1em sans serif;
 	}
 </style>

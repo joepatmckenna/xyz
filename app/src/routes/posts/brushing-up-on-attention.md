@@ -45,7 +45,11 @@ Notice that queries and keys have the same dimension $d_k$. This is to define th
 The softmax in the formula above is applied to each row of $W$ separately, so the $i^{th}$ output is a [convex combination](https://en.wikipedia.org/wiki/Convex_combination) of the input values:
 
 $$
-\sum_{j=1}^{n_v}p_{ij}v_j\text{ with }p_{ij}=\frac{e_{ij}}{\sum_{\mu}e_{i\mu}}\text{ and }e_{ij}=\exp\left(\frac{q_ik_j}{\sqrt{d_k}}\right).
+\begin{align*}
+&\sum_{j=1}^{n_v}p_{ij}v_j \\
+&\text{ with }p_{ij}=\frac{e_{ij}}{\sum_{\mu}e_{i\mu}} \\
+&\text{ and }e_{ij}=\exp\left(\frac{q_ik_j}{\sqrt{d_k}}\right).
+\end{align*}
 $$
 
 In other words, each output is a weighted average of input values with non-negative weights summing to 1. This has interesting implications, such as each output is in the convex hull of the input values. This contributes to the stability of the mechanism, as the convex hull of the outputs has less volume than that of the input values.
