@@ -1,18 +1,13 @@
-export const fetchMarkdownPosts = async () => {
-	const allPostFiles = import.meta.glob('/src/routes/posts/*.md');
-	const iterablePostFiles = Object.entries(allPostFiles);
-
-	const allPosts = await Promise.all(
-		iterablePostFiles.map(async ([path, resolver]) => {
-			const { metadata } = await resolver();
-			const postPath = path.slice(11, -3);
-
+export const fetchPosts = async () => {
+	const files = import.meta.glob('/src/routes/posts/*.md');
+	return await Promise.all(
+		Object.entries(files).map(async ([path, load]) => {
+			const content = await load();
 			return {
-				meta: metadata,
-				path: postPath
+				path: path.slice('/src/routes'.length, -'.md'.length),
+				metadata: content.metadata,
+				html: content.default.$$render()
 			};
 		})
 	);
-
-	return allPosts;
 };
