@@ -7,8 +7,6 @@ date: '2023-07-15'
    import ScaledDotProductAttention from "$lib/assets/media/scaled_dot_product_attention.png"
 </script>
 
-## Attention
-
 The goal of the attention mechanism in machine learning is to produce outputs by paying attention to -- weighing -- the inputs differently for each output. Given sets of input queries and key-value pairs, the attention mechanism outputs for each query a weighted sum of values where the weights represent the compatibility between the query and respective key-value pairs. A primary feature of attention that distinguishes it from a standard feedforward mechanism is that the weighing of input values is computed from other inputs, queries and keys, instead of simply being read from memory.
 
 ## Scaled Dot-Product Attention
