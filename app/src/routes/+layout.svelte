@@ -15,36 +15,14 @@
 	/>
 </svelte:head>
 
-<div class={$darkMode ? 'dark' : 'light'}>
-	<div class="app">
-		<Header />
-		<main>
-			<slot />
-		</main>
-	</div>
+<div class="app" theme={$darkMode ? 'dark' : 'light'}>
+	<Header />
+	<main>
+		<slot />
+	</main>
 </div>
 
 <style>
-	.dark {
-		--background-color: var(--dark-background);
-		--primary-color: var(--dark-primary-color);
-		--secondary-color: var(--dark-secondary-color);
-		padding: 0;
-		margin: 0;
-		min-width: 100%;
-		height: 100%;
-	}
-
-	.light {
-		--background-color: var(--light-background);
-		--primary-color: var(--light-primary-color);
-		--secondary-color: var(--light-secondary-color);
-		padding: 0;
-		margin: 0;
-		min-width: 100%;
-		height: 100%;
-	}
-
 	.app {
 		background-color: var(--background-color);
 		color: var(--primary-color);

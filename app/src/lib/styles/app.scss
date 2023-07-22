@@ -9,6 +9,18 @@
   --light-secondary-color: lightblue;
 }
 
+[theme='dark'] {
+  --background-color: var(--dark-background);
+	--primary-color: var(--dark-primary-color);
+	--secondary-color: var(--dark-secondary-color);
+}
+
+[theme='light'] {
+  --background-color: var(--light-background);
+  --primary-color: var(--light-primary-color);
+  --secondary-color: var(--light-secondary-color);
+}
+
 html, body {
   font-family: 'Open Sans';
   margin: 0;
