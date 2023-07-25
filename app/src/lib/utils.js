@@ -1,7 +1,3 @@
-import { writable } from 'svelte/store';
-
-export const darkMode = writable(false);
-
 export const fetchPosts = async () => {
 	const files = import.meta.glob('/src/routes/posts/*.md');
 	return await Promise.all(

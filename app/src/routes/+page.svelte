@@ -3,6 +3,6 @@
 	export let data;
 </script>
 
-{#each data.posts as post, index}
+{#each data?.posts as post, index}
 	<PostCard {post} {index} />
 {/each}

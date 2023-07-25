@@ -3,7 +3,7 @@
 	import '$lib/assets/css/prism.css';
 	import '$lib/assets/js/prism.js';
 	import Header from '$lib/components/Header.svelte';
-	import { darkMode } from '$lib/utils';
+	import { darkMode } from '$lib/stores.js';
 </script>
 
 <svelte:head>
