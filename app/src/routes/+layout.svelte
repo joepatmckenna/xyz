@@ -1,7 +1,6 @@
 <script>
 	import '$lib/styles/app.scss';
-	// import ;
-	// import '$lib/styles/prism-vsc-dark-plus.css';
+	import '$lib/styles/prism-vsc-dark-plus.css';
 	import Header from '$lib/components/Header.svelte';
 	import { darkMode } from '$lib/stores.js';
 </script>
@@ -13,7 +12,6 @@
 		integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn"
 		crossorigin="anonymous"
 	/>
-	<link id="currentCSS" href="src/lib/styles/prism-vs.css" rel="stylesheet" type="text/css" />
 </svelte:head>
 
 <div class="app" theme={$darkMode ? 'dark' : 'light'}>
